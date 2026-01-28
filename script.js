@@ -1,7 +1,5 @@
 let counts = []; 
 let names = [];  
-let pressTimer;      // 連続変化用タイマー
-let startDelayTimer; // 最初の「間隔」用タイマー
 
 window.onload = createCounters;
 
@@ -30,10 +28,8 @@ function createCounters() {
                     <input type="number" class="number-display" id="count-${i}" value="${counts[i]}" 
                            oninput="updateCountValue(${i}, this.value)" min="0">
                     <div class="btn-group">
-                        <button onmousedown="startPress(${i}, 1)" onmouseup="stopPress()" onmouseleave="stopPress()" 
-                                ontouchstart="startPress(${i}, 1)" ontouchend="stopPress()">＋</button>
-                        <button onmousedown="startPress(${i}, -1)" onmouseup="stopPress()" onmouseleave="stopPress()" 
-                                ontouchstart="startPress(${i}, -1)" ontouchend="stopPress()">－</button>
+                        <button onclick="changeValue(${i}, 1)">＋</button>
+                        <button onclick="changeValue(${i}, -1)">－</button>
                     </div>
                 </div>
             </div>
@@ -50,25 +46,7 @@ function updateCountValue(i, value) {
     updateAllCalculations();
 }
 
-// 長押し開始の処理
-function startPress(i, delta) {
-    // 1. まずクリックした瞬間に1回変化させる
-    changeValue(i, delta);
-
-    // 2. 500ms（0.5秒）待ってから、連続変化を開始する
-    startDelayTimer = setTimeout(() => {
-        pressTimer = setInterval(() => {
-            changeValue(i, delta);
-        }, 100); // 100ms（0.1秒）間隔で更新
-    }, 500); 
-}
-
-// 指やマウスが離れたらすべてのタイマーを止める
-function stopPress() {
-    clearTimeout(startDelayTimer);
-    clearInterval(pressTimer);
-}
-
+// 単純な数値変更のみに変更
 function changeValue(i, delta) {
     const newValue = counts[i] + delta;
     if (newValue >= 0) { 
