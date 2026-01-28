@@ -32,7 +32,6 @@ function createCounters() {
                                value="${currentName}" 
                                placeholder="${placeholderName}" 
                                onchange="saveName(${i}, this.value)">
-                        <button class="reset-icon-btn" onclick="resetIndividualCount(${i})">↻</button>
                     </div>
                     <input type="number" class="number-display" id="count-${i}" value="${counts[i]}" 
                            oninput="updateCountValue(${i}, this.value)">
@@ -40,7 +39,7 @@ function createCounters() {
                         <button onmouseup="handleRelease(event, ${i}, 1)" 
                                 ontouchend="handleRelease(event, ${i}, 1)"
                                 oncontextmenu="return false;">＋</button>
-                        <button onmouseup="handleRelease(event, ${i}, -1)"↻
+                        <button onmouseup="handleRelease(event, ${i}, -1)"
                                 ontouchend="handleRelease(event, ${i}, -1)"
                                 oncontextmenu="return false;">－</button>
                     </div>
@@ -189,3 +188,4 @@ function updateAllCalculations() {
         } 
     }
 }
+
