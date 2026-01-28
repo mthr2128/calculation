@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 2px;
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: bold;
@@ -94,14 +94,15 @@ input[type="number"] {
 }
 
 .name-input {
-    width: 90px;
     border: none;
     background: transparent;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     border-bottom: 2px dashed #ccc;
     margin-bottom: 5px;
+    width: 5em;
+    margin-bottom: 0; 
 }
 
 .number-display {
@@ -151,4 +152,57 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+/* プレースホルダの色を調整 */
+.name-input::placeholder {
+    color: #555;
+    font-weight: normal;
+    opacity: 1; /* Firefox対策 */
+}
+
+/* 名前エリア（順位＋入力欄） */
+.name-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 5px;
+}
+
+/* 順位表示のスタイル */
+.rank-display {
+    font-size: 11px;
+    color: #666;
+    min-width: 22px;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ↺ボタンのスタイル */
+.reset-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #999;
+    padding: 0 2px;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    border: 2px solid #333;
+    border-radius: 100%;
+}
+
+.reset-icon-btn:active {
+    color: #333;
+    transform: rotate(900deg); /* 押した時に少し動く演出 */
+    transition: transform 1.0s;
+}
+
+.rank-display {
+    font-size: 11px;
+    color: #666;
+    min-width: 22px;
+    text-align: right;
 }
