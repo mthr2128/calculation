@@ -11,31 +11,27 @@ body {
     box-sizing: border-box;
 }
 
-/* 入力エリア（上部） */
+/* 上部入力エリア */
 .input-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* 隙間を広げた */
+    gap: 10px;
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.main-controls {
-    margin-right: 0;
-}
-
 input[type="number"] {
-    height: 25px; /* 高さを大きく */
-    width: 75px; /* 幅を大きく */
-    font-size: 20px; /* 数値を大きく */
+    height: 25px;
+    width: 75px;
+    font-size: 20px;
     border: 2px solid #333;
     border-radius: 8px;
     text-align: center;
 }
 
-/* 人数操作のボタン */
+/* 人数操作ボタン */
 .circle-btn {
     width: 30px; 
     height: 30px; 
@@ -43,28 +39,38 @@ input[type="number"] {
     border: 2px solid #333;
     font-size: 15px;
     cursor: pointer;
-    font-weight: bold;
     background-color: #eee;
 }
 
-/* カウンター容器 */
+/* クリアボタン */
+.clear-btn {
+    margin-left: 10px;
+    padding: 2px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    height: 30px;
+}
+
+/* カウンター表示エリア */
 #counter-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
 
-/* 1人分のセット */
 .counter-set {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    width: 120px; /* 横幅を大きく */
+    width: 120px;
 }
 
-/* 計算結果（上の数字） */
 .result-box {
     width: 120px;
     height: 30px;
@@ -77,7 +83,6 @@ input[type="number"] {
     font-weight: bold;
 }
 
-/* スコアカード */
 .score-card {
     border: 2px solid #333;
     border-radius: 8px;
@@ -85,26 +90,22 @@ input[type="number"] {
     background-color: #f8f8f8;
     text-align: center;
     width: 130px;
-    height: auto;
-    min-height: 160px;
     box-sizing: border-box;
 }
 
-/* 名前入力 */
 .name-input {
-    width: 80px;
+    width: 90px;
     border: none;
     background: transparent;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     border-bottom: 2px dashed #ccc;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
-/* スコア表示 */
 .number-display {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: bold;
     margin: 5px 0;
     line-height: 1;
@@ -113,85 +114,41 @@ input[type="number"] {
     background: transparent;
     text-align: center;
     outline: none;
-    /* 標準の上下ボタンを非表示 */
     appearance: none;
     -moz-appearance: textfield;
 }
 
-/* ＋－ボタン */
+/* ＋－ボタン本体 */
 .btn-group button {
-    width: 80px;
-    height: 50px;
-    font-size: 20px;
-    line-height: 25px;
-    margin: 2px;
+    width: 85px;
+    height: 45px;
+    font-size: 22px;
+    margin: 2px 0;
     border-radius: 10px;
     border: 2px solid #333;
     cursor: pointer;
     background-color: #fff;
-    transition: all 0.1s;
     
-    /* スマホでのテキスト選択・システムメニューを徹底的に無効化 */
+    /* スマホ最適化：テキスト選択とメニューを禁止 */
     user-select: none; 
-    -webkit-user-select: none;      /* iOS Safari */
-    -webkit-touch-callout: none;    /* iOSで長押しメニューが出るのを防ぐ */
-    -moz-user-select: none;         /* Firefox */
-    -ms-user-select: none;          /* IE/Edge */
-    
-    /* タップ時の青いハイライトを消す（お好みで） */
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* ボタンを押した（クリック・タップ中）の見た目 */
+/* ボタンの沈み込み演出 */
 .btn-group button:active {
-    background-color: #ddd;     /* 少し暗くする */
-    transform: translateY(2px);  /* 下に少し沈ませる */
-    box-shadow: none;           /* 影を消して押し込み感を出す */
-    border-color: #000;         /* 枠線を強調 */
-}
-
-/* ＋ボタン専用のホバー・アクティブ色（お好みで） */
-.btn-group button:first-child:active {
-    background-color: #e6f4ea; /* ＋は少し緑っぽく */
-}
-
-/* －ボタン専用のホバー・アクティブ色（お好みで） */
-.btn-group button:last-child:active {
-    background-color: #fce8e6; /* －は少し赤っぽく */
-}
-
-.number-display::-webkit-outer-spin-button,
-.number-display::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-#base-input {
-    appearance: none;
-    -moz-appearance: textfield;
-}
-
-#base-input::-webkit-outer-spin-button,
-#base-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-/* クリアボタンのデザイン */
-.clear-btn {
-    margin-left: 10px;
-    padding: 2px 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: #fff;
-    cursor: pointer;
-    height: 30px;
-    transition: all 0.1s;
-}
-
-.clear-btn:active {
-    background-color: #fce8e6; /* 押した時に少し赤くする */
+    background-color: #ddd;
     transform: translateY(2px);
+}
+
+.btn-group button:first-child:active { background-color: #e6f4ea; }
+.btn-group button:last-child:active { background-color: #fce8e6; }
+
+/* 数値入力の矢印を消す */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
