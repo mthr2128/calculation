@@ -129,11 +129,17 @@ input[type="number"] {
     border: 2px solid #333;
     cursor: pointer;
     background-color: #fff;
-    transition: all 0.1s; /* 変化を滑らかに */
+    transition: all 0.1s;
     
-    /* 長押し時にテキストが選択されないようにする */
+    /* スマホでのテキスト選択・システムメニューを徹底的に無効化 */
     user-select: none; 
-    -webkit-user-select: none;
+    -webkit-user-select: none;      /* iOS Safari */
+    -webkit-touch-callout: none;    /* iOSで長押しメニューが出るのを防ぐ */
+    -moz-user-select: none;         /* Firefox */
+    -ms-user-select: none;          /* IE/Edge */
+    
+    /* タップ時の青いハイライトを消す（お好みで） */
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* ボタンを押した（クリック・タップ中）の見た目 */
