@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* 隙間を広げた */
+    gap: 10px; /* 隙間を広げた */
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: bold;
@@ -170,5 +170,6 @@ input[type="number"] {
     -webkit-appearance: none;
     margin: 0;
 }
+
 
 
