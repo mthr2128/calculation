@@ -7,10 +7,11 @@
     <title>計算ページ</title>
 </head>
 <body>
-    <div class="input-area main-controls">
-        <span>ポイント:</span>
-        <input type="number" id="base-input" value="100" oninput="updateAllCalculations()">
-    </div>
+<div class="input-area main-controls">
+    <span>ポイント:</span>
+    <input type="number" id="base-input" value="100" oninput="updateAllCalculations()">
+    <button class="clear-btn" onclick="clearData()">クリア</button>
+</div>
 
     <div class="input-area person-control">
         <span>人数：</span>
@@ -24,3 +25,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
