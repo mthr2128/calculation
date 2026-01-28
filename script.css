@@ -181,6 +181,8 @@ input::-webkit-inner-spin-button {
 
 /* ↺ボタンのスタイル */
 .reset-icon-btn {
+    width: 24px;
+    height: 24px;
     background: none;
     border: none;
     cursor: pointer;
@@ -199,4 +201,5 @@ input::-webkit-inner-spin-button {
     transform: rotate(900deg); /* 押した時に少し動く演出 */
     transition: transform 1.0s;
 }
+
 
