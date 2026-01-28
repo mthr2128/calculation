@@ -17,8 +17,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px; /* 隙間を広げた */
-    margin-bottom: 30px;
-    font-size: 20px; /* 文字を大きく */
+    margin-bottom: 15px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -27,22 +27,23 @@ body {
 }
 
 input[type="number"] {
-    height: 50px; /* 高さを大きく */
-    width: 100px; /* 幅を大きく */
-    font-size: 30px; /* 数値を大きく */
+    height: 25px; /* 高さを大きく */
+    width: 75px; /* 幅を大きく */
+    font-size: 20px; /* 数値を大きく */
     border: 2px solid #333;
     border-radius: 8px;
     text-align: center;
 }
 
-/* 人数操作の丸ボタン */
+/* 人数操作のボタン */
 .circle-btn {
-    width: 50px; 
-    height: 50px; 
+    width: 30px; 
+    height: 30px; 
     border-radius: 8px;
     border: 2px solid #333;
-    font-size: 30px;
+    font-size: 15px;
     cursor: pointer;
+    font-weight: bold;
     background-color: #eee;
 }
 
@@ -59,20 +60,20 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    width: 150px; /* 横幅を大きく */
+    gap: 8px;
+    width: 120px; /* 横幅を大きく */
 }
 
 /* 計算結果（上の数字） */
 .result-box {
-    width: 160px;
-    height: 50px;
+    width: 120px;
+    height: 30px;
     border: 2px solid #333;
     border-radius: 8px;
     text-align: center;
-    line-height: 50px;
+    line-height: 30px;
     background-color: #fff;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -80,30 +81,33 @@ input[type="number"] {
 .score-card {
     border: 2px solid #333;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     background-color: #f8f8f8;
     text-align: center;
-    width: 160px;
+    width: 130px;
+    height: auto;
+    min-height: 160px;
     box-sizing: border-box;
 }
 
 /* 名前入力 */
 .name-input {
-    width: 120px;
+    width: 80px;
     border: none;
     background: transparent;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px dashed #ccc;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 /* スコア表示 */
 .number-display {
     font-size: 48px;
     font-weight: bold;
-    margin: 15px 0;
+    margin: 5px 0;
+    line-height: 1;
     width: 100%;
     border: none;
     background: transparent;
@@ -116,10 +120,11 @@ input[type="number"] {
 
 /* ＋－ボタン */
 .btn-group button {
-    width: 100px;
-    height: 60px;
-    font-size: 30px;
-    margin: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 2px;
     border-radius: 10px;
     border: 2px solid #333;
     cursor: pointer;
@@ -134,7 +139,7 @@ input[type="number"] {
 /* ボタンを押した（クリック・タップ中）の見た目 */
 .btn-group button:active {
     background-color: #ddd;     /* 少し暗くする */
-    transform: translateY(4px);  /* 下に少し沈ませる */
+    transform: translateY(2px);  /* 下に少し沈ませる */
     box-shadow: none;           /* 影を消して押し込み感を出す */
     border-color: #000;         /* 枠線を強調 */
 }
