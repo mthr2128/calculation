@@ -178,28 +178,3 @@ input::-webkit-inner-spin-button {
     text-align: right;
     white-space: nowrap;
 }
-
-/* ↺ボタンのスタイル */
-.reset-icon-btn {
-    width: 24px;
-    height: 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: #999;
-    padding: 0 2px;
-    line-height: 1;
-    -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    border: 2px solid #333;
-    border-radius: 50%;
-}
-
-.reset-icon-btn:active {
-    color: #333;
-    transform: rotate(900deg); /* 押した時に少し動く演出 */
-    transition: transform 1.0s;
-}
-
-
