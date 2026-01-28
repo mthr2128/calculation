@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="script.css">
+    <title>計算ページ</title>
+</head>
+<body>
+    <div class="input-area main-controls">
+        <span>ポイント</span>
+        <input type="number" id="base-input" value="100" oninput="updateAllCalculations()">
+        <button id="mode-toggle-btn" onclick="toggleMode()">モード: ボタン</button>
+    </div>
+
+    <div class="input-area person-control">
+        <span>人数：</span>
+        <button class="circle-btn" onclick="changePeople(-1)">－</button>
+        <input type="number" id="input-num" value="2" readonly>
+        <button class="circle-btn" onclick="changePeople(1)">＋</button>
+    </div>
+
+    <div id="counter-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
