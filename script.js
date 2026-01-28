@@ -93,8 +93,17 @@ function loadData() {
 
 function clearData() {
     if (confirm("データをすべてリセットしますか？")) {
-        localStorage.removeItem('counterAppData');
-        location.reload();
+        counts = counts.map(() => 0); 
+        
+        // 画面の入力欄の表示を0に更新する
+        counts.forEach((val, i) => {
+            const input = document.getElementById(`count-${i}`);
+            if (input) input.value = 0;
+        });
+
+        // データの保存と再計算
+        saveData(); 
+        updateAllCalculations();
     }
 }
 
