@@ -199,10 +199,3 @@ input::-webkit-inner-spin-button {
     transform: rotate(900deg); /* 押した時に少し動く演出 */
     transition: transform 1.0s;
 }
-
-.rank-display {
-    font-size: 11px;
-    color: #666;
-    min-width: 22px;
-    text-align: right;
-}
