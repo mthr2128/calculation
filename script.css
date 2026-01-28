@@ -16,10 +16,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* 隙間を広げた */
+    gap: 10px; /* 隙間を広げた */
     margin-bottom: 30px;
-    font-size: 24px; /* 文字を大きく */
+    font-size: 20px; /* 文字を大きく */
     font-weight: bold;
+}
+
+.main-controls {
+    margin-right: 4.5em;
 }
 
 input[type="number"] {
@@ -33,9 +37,9 @@ input[type="number"] {
 
 /* 人数操作の丸ボタン */
 .circle-btn {
-    width: 60px;  /* 2倍サイズ */
-    height: 60px; /* 2倍サイズ */
-    border-radius: 50%;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 8px;
     border: 2px solid #333;
     font-size: 30px;
     cursor: pointer;
@@ -56,7 +60,7 @@ input[type="number"] {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 180px; /* 横幅を大きく */
+    width: 150px; /* 横幅を大きく */
 }
 
 /* 計算結果（上の数字） */
@@ -75,11 +79,11 @@ input[type="number"] {
 /* スコアカード */
 .score-card {
     border: 2px solid #333;
-    border-radius: 15px;
+    border-radius: 8px;
     padding: 20px;
     background-color: #f8f8f8;
     text-align: center;
-    width: 100%;
+    width: 160px;
     box-sizing: border-box;
 }
 
@@ -97,19 +101,67 @@ input[type="number"] {
 
 /* スコア表示 */
 .number-display {
-    font-size: 48px; /* 数字を巨大に */
+    font-size: 48px;
     font-weight: bold;
     margin: 15px 0;
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    outline: none;
+    /* 標準の上下ボタンを非表示 */
+    appearance: none;
+    -moz-appearance: textfield;
 }
 
 /* ＋－ボタン */
 .btn-group button {
-    width: 120px;
-    height: 70px;
-    font-size: 32px;
+    width: 100px;
+    height: 60px;
+    font-size: 30px;
     margin: 5px;
     border-radius: 10px;
     border: 2px solid #333;
     cursor: pointer;
     background-color: #fff;
+    transition: all 0.1s; /* 変化を滑らかに */
+    
+    /* 長押し時にテキストが選択されないようにする */
+    user-select: none; 
+    -webkit-user-select: none;
+}
+
+/* ボタンを押した（クリック・タップ中）の見た目 */
+.btn-group button:active {
+    background-color: #ddd;     /* 少し暗くする */
+    transform: translateY(4px);  /* 下に少し沈ませる */
+    box-shadow: none;           /* 影を消して押し込み感を出す */
+    border-color: #000;         /* 枠線を強調 */
+}
+
+/* ＋ボタン専用のホバー・アクティブ色（お好みで） */
+.btn-group button:first-child:active {
+    background-color: #e6f4ea; /* ＋は少し緑っぽく */
+}
+
+/* －ボタン専用のホバー・アクティブ色（お好みで） */
+.btn-group button:last-child:active {
+    background-color: #fce8e6; /* －は少し赤っぽく */
+}
+
+.number-display::-webkit-outer-spin-button,
+.number-display::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#base-input {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+#base-input::-webkit-outer-spin-button,
+#base-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
