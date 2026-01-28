@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* 隙間を広げた */
+    gap: 20px; /* 隙間を広げた */
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: bold;
@@ -129,7 +129,7 @@ input[type="number"] {
     border: 2px solid #333;
     cursor: pointer;
     background-color: #fff;
-    transition: all 0.1s; /* 変化を滑らかに */
+    transition: all 0.05s; /* 変化を滑らかに */
     
     /* 長押し時にテキストが選択されないようにする */
     user-select: none; 
@@ -170,4 +170,5 @@ input[type="number"] {
     -webkit-appearance: none;
     margin: 0;
 }
+
 
