@@ -23,7 +23,7 @@ body {
 }
 
 .main-controls {
-    margin-right: 4.5em;
+    margin-right: 0;
 }
 
 input[type="number"] {
@@ -129,7 +129,7 @@ input[type="number"] {
     border: 2px solid #333;
     cursor: pointer;
     background-color: #fff;
-    transition: all 0.05s; /* 変化を滑らかに */
+    transition: all 0.1s; /* 変化を滑らかに */
     
     /* 長押し時にテキストが選択されないようにする */
     user-select: none; 
@@ -171,6 +171,21 @@ input[type="number"] {
     margin: 0;
 }
 
+/* クリアボタンのデザイン */
+.clear-btn {
+    margin-left: 10px;
+    padding: 2px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    height: 30px;
+    transition: all 0.1s;
+}
 
-
-
+.clear-btn:active {
+    background-color: #fce8e6; /* 押した時に少し赤くする */
+    transform: translateY(2px);
+}
